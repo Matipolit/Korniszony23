@@ -3,6 +3,16 @@ import { Box, Text, Flex,} from "@chakra-ui/react";
 function Home() {
   return (
     <Flex direction="column" gap="5">
+
+      <Box  padding="3">
+      <Text fontSize="27px" color="#193769;">
+      Vote with us!
+        </Text>
+        <Text fontSize="14px" color="#898989">
+        Good Morning, Alina
+        </Text>
+      </Box>
+
       <Box background="#EBF2FE;" borderRadius="2xl" padding="5" boxShadow="xl">
         <Text fontSize="16px" color="#193769;">
           Elections to the European Parliament in <b>2137 days</b>
