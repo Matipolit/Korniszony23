@@ -1,6 +1,6 @@
 import { IconButton, Flex, Spacer, Center, Text, Box, Tabs, TabList, Tab, TabIndicator, TabPanels, TabPanel } from "@chakra-ui/react"
 import { useState } from 'react'
-import {FaPeopleArrows, FaRegIdCard, FaHome, FaVoteYea} from "react-icons/fa"
+import {FaPeopleArrows, FaRegIdCard, FaHome, FaVoteYea, } from "react-icons/fa"
 import {PiLighthouseFill} from "react-icons/pi"
 import { useEffect } from 'react';
 
@@ -28,42 +28,48 @@ function Layout(){
 
 
   return(
-    <Box>
+    <Box >
       <Text fontSize="xx-large" fontWeight="bold">{title}</Text>
       {index == 2 ? <Home /> : index == 4 ? <Candidates /> : <></>}
       <BottomNavigation
+      
+      borderRadius='lg'
+      display='flex'
+
         value={index}
         onChange={(newIndex) => {
           setIndex(newIndex);
         }}
         colorScheme="brand"
-        variant="float"
+        variant='flat'
         showLabel="if-active"
+
       >
 
       <BottomNavigationItem>
         <BottomNavigationIcon as={FaPeopleArrows} />
-        <BottomNavigationLabel>Social</BottomNavigationLabel>
+        <BottomNavigationLabel></BottomNavigationLabel>
       </BottomNavigationItem>
 
       <BottomNavigationItem>
         <BottomNavigationIcon as={FaRegIdCard} />
-        <BottomNavigationLabel>Profile</BottomNavigationLabel>
+        <BottomNavigationLabel></BottomNavigationLabel>
       </BottomNavigationItem>
       <BottomNavigationItem>
         <BottomNavigationIcon as={FaHome} />
-        <BottomNavigationLabel>Home</BottomNavigationLabel>
+        <BottomNavigationLabel></BottomNavigationLabel>
       </BottomNavigationItem>
 
       <BottomNavigationItem>
         <BottomNavigationIcon as={FaVoteYea} />
-        <BottomNavigationLabel>Vote</BottomNavigationLabel>
+        <BottomNavigationLabel></BottomNavigationLabel>
       </BottomNavigationItem>
 
       <BottomNavigationItem>
         <BottomNavigationIcon as={PiLighthouseFill} />
-        <BottomNavigationLabel>Candidates</BottomNavigationLabel>
+        <BottomNavigationLabel></BottomNavigationLabel>
       </BottomNavigationItem>
+      
     </BottomNavigation>
   </Box>
 
