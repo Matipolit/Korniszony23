@@ -77,5 +77,6 @@ function Home() {
       </Box>
     </Flex>
   );
+
 }
 export default Home;

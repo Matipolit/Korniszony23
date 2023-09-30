@@ -17,6 +17,9 @@ dependencies:
   '@fontsource/rubik':
     specifier: ^5.0.12
     version: 5.0.12
+  chakra-ui-bottom-navigation:
+    specifier: ^2.0.1
+    version: 2.0.1(@chakra-ui/react@2.8.1)(react@18.2.0)
   framer-motion:
     specifier: ^10.16.4
     version: 10.16.4(react-dom@18.2.0)(react@18.2.0)
@@ -2080,6 +2083,17 @@ packages:
   /caniuse-lite@1.0.30001541:
     resolution: {integrity: sha512-bLOsqxDgTqUBkzxbNlSBt8annkDpQB9NdzdTbO2ooJ+eC/IQcvDspDc058g84ejCelF7vHUx57KIOjEecOHXaw==}
     dev: true
+
+  /chakra-ui-bottom-navigation@2.0.1(@chakra-ui/react@2.8.1)(react@18.2.0):
+    resolution: {integrity: sha512-GMkxhcmjwOUJfE+t/2OvitQGkz1m/mdC4wP/1KrOkxm3aT8D2dO0ImWPh2lq3+72m+bOda6YWxuSewayUcNcng==}
+    peerDependencies:
+      '@chakra-ui/react': ^2.0.0
+      react: '>=16.8.1'
+    dependencies:
+      '@chakra-ui/react': 2.8.1(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.23)(framer-motion@10.16.4)(react-dom@18.2.0)(react@18.2.0)
+      '@chakra-ui/utils': 2.0.15
+      react: 18.2.0
+    dev: false
 
   /chalk@2.4.2:
     resolution: {integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==}
