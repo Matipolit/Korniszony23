@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Text>Korniszony wybierają</Text>
-      <Rectangle>jdhjsdjhsd</Rectangle>
+      <Rectangle w='300px' h='300px'>jdhjsdjhsd</Rectangle>
     </>
   )
 }
