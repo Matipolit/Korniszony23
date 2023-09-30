@@ -12,10 +12,11 @@ function Rectangle() {
         >
             
          <Text
+         padding='30px'
          fontSize='27px'
          fontWeight='700'
          >
-            Test </Text>
+            Lorem impsum dolor sit amed twoja stara jdjdjdjdjdj</Text>
         </Box>
     )
 }
