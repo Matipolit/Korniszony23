@@ -1,9 +1,9 @@
 import { Box, Center, Text, Button} from "@chakra-ui/react"
-function Home(){
+function Vote(){
   return(
     <Box>
-      Home  
+      
     </Box>
   )
 }
-export default Home
+export default Vote
