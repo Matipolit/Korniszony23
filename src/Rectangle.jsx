@@ -1,6 +1,7 @@
-import { Box, Text, Center} from '@chakra-ui/react'
+import { Box, Text} from '@chakra-ui/react'
+import { children } from 'react';
 
-function Rectangle() {
+function Rectangle( {children}) {
     return(
         <Box bgGradient='linear-gradient(180deg, #183E7A 0%, #19365C 100%);'
         color='white'
@@ -16,7 +17,7 @@ function Rectangle() {
          fontSize='27px'
          fontWeight='700'
          >
-            Lorem impsum dolor sit amed twoja stara jdjdjdjdjdj</Text>
+            {children}</Text>
         </Box>
     )
 }
