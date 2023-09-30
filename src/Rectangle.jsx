@@ -1,19 +1,19 @@
 import { Box, Text} from '@chakra-ui/react'
 import { children } from 'react';
 
-function Rectangle( {children, w, h}) {
+function Rectangle( {children, bg, c, b, bc} ) {
     return(
-        <Box bgGradient='linear-gradient(180deg, #183E7A 0%, #19365C 100%);'
-        color='white'
+        <Box background= { bg }
+        color= { c }
         borderRadius='lg'
-        w={ w }
-        h={ h }
+        border = { b}
+        borderColor={ bc}
      display='flex'
      overflow='hidden'
         >
             
          <Text
-         padding='30px'
+         padding='10px'
          fontSize='27px'
          fontWeight='700'
          >
