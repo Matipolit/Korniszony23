@@ -7,7 +7,10 @@ function Rectangle() {
         borderRadius='lg'
         w='303px'
         h='315px'
-        display='flex'>
+     display='flex'
+     overflow='hidden'
+        >
+            
          <Text
          fontSize='27px'
          fontWeight='700'
