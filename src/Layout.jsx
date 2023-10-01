@@ -27,6 +27,7 @@ import {
 import Home from "./pages/Home";
 import Latarnik from "./pages/Latarnik";
 import Candidates from "./pages/Candidates";
+import Vote from "./pages/Vote";
 
 const titles = ["Friends", "Profile", "Home", "Voting", "Meet the candidates"];
 
@@ -44,7 +45,7 @@ function Layout() {
                 {title}
             </Text>
             <Center padding="4">
-                {index == 2 ? <Home /> : index == 4 ? <Candidates /> : <></>}
+                {index == 2 ? <Home /> : index == 3 ? <Vote /> : index == 4 ? <Candidates /> : <></>}
             </Center>
             <BottomNavigation
                 value={index}
@@ -60,30 +61,32 @@ function Layout() {
                 right="0"
                 borderRadius="0"
             >
-                <BottomNavigationItem>
-                    <BottomNavigationIcon as={FaPeopleArrows} />
-                    <BottomNavigationLabel>Social</BottomNavigationLabel>
-                </BottomNavigationItem>
 
-                <BottomNavigationItem>
-                    <BottomNavigationIcon as={FaRegIdCard} />
-                    <BottomNavigationLabel>Profile</BottomNavigationLabel>
-                </BottomNavigationItem>
-                <BottomNavigationItem>
-                    <BottomNavigationIcon as={FaHome} />
-                    <BottomNavigationLabel>Home</BottomNavigationLabel>
-                </BottomNavigationItem>
+            <BottomNavigationItem>
+              <BottomNavigationIcon as={FaPeopleArrows} />
+              <BottomNavigationLabel></BottomNavigationLabel>
+            </BottomNavigationItem>
 
-                <BottomNavigationItem>
-                    <BottomNavigationIcon as={FaVoteYea} />
-                    <BottomNavigationLabel>Vote</BottomNavigationLabel>
-                </BottomNavigationItem>
+            <BottomNavigationItem>
+              <BottomNavigationIcon as={FaRegIdCard} />
+              <BottomNavigationLabel></BottomNavigationLabel>
+            </BottomNavigationItem>
+            <BottomNavigationItem>
+              <BottomNavigationIcon as={FaHome} />
+              <BottomNavigationLabel></BottomNavigationLabel>
+            </BottomNavigationItem>
 
-                <BottomNavigationItem>
-                    <BottomNavigationIcon as={PiLighthouseFill} />
-                    <BottomNavigationLabel>Cand.</BottomNavigationLabel>
-                </BottomNavigationItem>
-            </BottomNavigation>
+            <BottomNavigationItem>
+              <BottomNavigationIcon as={FaVoteYea} />
+              <BottomNavigationLabel></BottomNavigationLabel>
+            </BottomNavigationItem>
+
+            <BottomNavigationItem>
+              <BottomNavigationIcon as={PiLighthouseFill} />
+              <BottomNavigationLabel></BottomNavigationLabel>
+            </BottomNavigationItem>
+
+          </BottomNavigation>
         </Box>
     );
 }
