@@ -8,7 +8,7 @@ function Vote() {
     return voting == 1 ? (
         <VoteChoice />
     ) : (
-        <Flex direction="column" gap="4" alignItems="center">
+        <Flex direction="column" gap="4" alignItems="stretch">
             <Text fontSize="27px" color="#193769;" fontWeight="bold">
                 Upcoming elections
             </Text>
