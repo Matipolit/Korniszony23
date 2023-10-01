@@ -14,6 +14,7 @@ import {
 import Home from "./pages/Home";
 import Candidates from "./pages/Candidates";
 import Vote from "./pages/Vote";
+import Social from "./pages/Social";
 
 const titles = ["Friends", "Profile", "Home", "Voting", "Meet the candidates"];
 
@@ -74,7 +75,6 @@ function Layout() {
                     <BottomNavigationIcon as={FaVoteYea} />
                     <BottomNavigationLabel>Voting</BottomNavigationLabel>
                 </BottomNavigationItem>
-
                 <BottomNavigationItem>
                     <BottomNavigationIcon as={PiLighthouseFill} />
                     <BottomNavigationLabel>Candid.</BottomNavigationLabel>
