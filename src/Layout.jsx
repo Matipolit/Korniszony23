@@ -16,7 +16,7 @@ import Candidates from "./pages/Candidates";
 import Vote from "./pages/Vote";
 import Social from "./pages/Social";
 
-const titles = ["Friends", "Profile", "Home", "Voting", "Meet the candidates"];
+const titles = ["Social", "Profile", "Home", "Voting", "Meet the candidates"];
 
 function Layout() {
     const [index, setIndex] = useState(2);
@@ -28,11 +28,20 @@ function Layout() {
 
     return (
         <Box>
-            <Text margin="1rem 0 0 1rem" fontSize="xx-large" fontWeight="bold">
+            <Text
+                margin="1rem 0 0 1rem"
+                fontSize="xx-large"
+                fontWeight="bold"
+                color="brand.400"
+            >
                 {title}
             </Text>
             <Center padding="4">
-                {index == 2 ? (
+                {index == 0 ? (
+                    <Social />
+                ) : index == 1 ? (
+                    <Text>Coming soon</Text>
+                ) : index == 2 ? (
                     <Home />
                 ) : index == 3 ? (
                     <Vote />
@@ -59,7 +68,7 @@ function Layout() {
             >
                 <BottomNavigationItem>
                     <BottomNavigationIcon as={FaPeopleArrows} />
-                    <BottomNavigationLabel>Friends</BottomNavigationLabel>
+                    <BottomNavigationLabel>Social</BottomNavigationLabel>
                 </BottomNavigationItem>
 
                 <BottomNavigationItem>

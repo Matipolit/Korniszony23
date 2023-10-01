@@ -88,10 +88,6 @@ function Candidates() {
                             value={searched}
                             onChange={handleChange}
                             placeholder="Search"
-                            _placeholder={{
-                                opacity: 1,
-                                backgroundColor: "#F4F4F4",
-                            }}
                             marginBottom="1"
                         ></Input>
                         <InputLeftElement>
@@ -99,7 +95,9 @@ function Candidates() {
                         </InputLeftElement>
                     </InputGroup>
                     <Menu>
-                        <MenuButton as={Button}>Voting District</MenuButton>
+                        <MenuButton>
+                            <Button>Voting District</Button>
+                        </MenuButton>
                         <MenuList>
                             {Object.values(constitutencies_with_names).map(
                                 (okr) => (
