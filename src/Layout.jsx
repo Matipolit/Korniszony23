@@ -1,17 +1,4 @@
-import {
-    IconButton,
-    Flex,
-    Spacer,
-    Center,
-    Text,
-    Box,
-    Tabs,
-    TabList,
-    Tab,
-    TabIndicator,
-    TabPanels,
-    TabPanel,
-} from "@chakra-ui/react";
+import { Center, Text, Box } from "@chakra-ui/react";
 import { useState } from "react";
 import { FaPeopleArrows, FaRegIdCard, FaHome, FaVoteYea } from "react-icons/fa";
 import { PiLighthouseFill } from "react-icons/pi";
@@ -25,7 +12,6 @@ import {
 } from "chakra-ui-bottom-navigation";
 
 import Home from "./pages/Home";
-import Latarnik from "./pages/Latarnik";
 import Candidates from "./pages/Candidates";
 import Vote from "./pages/Vote";
 
@@ -41,11 +27,19 @@ function Layout() {
 
     return (
         <Box>
-            <Text padding="4" fontSize="xx-large" fontWeight="bold">
+            <Text margin="1rem 0 0 1rem" fontSize="xx-large" fontWeight="bold">
                 {title}
             </Text>
             <Center padding="4">
-                {index == 2 ? <Home /> : index == 3 ? <Vote /> : index == 4 ? <Candidates /> : <></>}
+                {index == 2 ? (
+                    <Home />
+                ) : index == 3 ? (
+                    <Vote />
+                ) : index == 4 ? (
+                    <Candidates />
+                ) : (
+                    <></>
+                )}
             </Center>
             <BottomNavigation
                 value={index}
@@ -60,33 +54,32 @@ function Layout() {
                 left="0"
                 right="0"
                 borderRadius="0"
+                fontSize="smaller"
             >
+                <BottomNavigationItem>
+                    <BottomNavigationIcon as={FaPeopleArrows} />
+                    <BottomNavigationLabel>Friends</BottomNavigationLabel>
+                </BottomNavigationItem>
 
-            <BottomNavigationItem>
-              <BottomNavigationIcon as={FaPeopleArrows} />
-              <BottomNavigationLabel></BottomNavigationLabel>
-            </BottomNavigationItem>
+                <BottomNavigationItem>
+                    <BottomNavigationIcon as={FaRegIdCard} />
+                    <BottomNavigationLabel>Profile</BottomNavigationLabel>
+                </BottomNavigationItem>
+                <BottomNavigationItem>
+                    <BottomNavigationIcon as={FaHome} />
+                    <BottomNavigationLabel>Home</BottomNavigationLabel>
+                </BottomNavigationItem>
 
-            <BottomNavigationItem>
-              <BottomNavigationIcon as={FaRegIdCard} />
-              <BottomNavigationLabel></BottomNavigationLabel>
-            </BottomNavigationItem>
-            <BottomNavigationItem>
-              <BottomNavigationIcon as={FaHome} />
-              <BottomNavigationLabel></BottomNavigationLabel>
-            </BottomNavigationItem>
+                <BottomNavigationItem>
+                    <BottomNavigationIcon as={FaVoteYea} />
+                    <BottomNavigationLabel>Voting</BottomNavigationLabel>
+                </BottomNavigationItem>
 
-            <BottomNavigationItem>
-              <BottomNavigationIcon as={FaVoteYea} />
-              <BottomNavigationLabel></BottomNavigationLabel>
-            </BottomNavigationItem>
-
-            <BottomNavigationItem>
-              <BottomNavigationIcon as={PiLighthouseFill} />
-              <BottomNavigationLabel></BottomNavigationLabel>
-            </BottomNavigationItem>
-
-          </BottomNavigation>
+                <BottomNavigationItem>
+                    <BottomNavigationIcon as={PiLighthouseFill} />
+                    <BottomNavigationLabel>Candid.</BottomNavigationLabel>
+                </BottomNavigationItem>
+            </BottomNavigation>
         </Box>
     );
 }
