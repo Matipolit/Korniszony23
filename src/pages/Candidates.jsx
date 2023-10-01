@@ -1,11 +1,17 @@
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaArrowDown } from "react-icons/fa";
 import {
     Input,
     Box,
+    Button,
     InputGroup,
     InputLeftElement,
+    InputRightElement,
     Flex,
     Text,
+    Menu,
+    MenuButton,
+    MenuList,
+    MenuItem,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import data from "../assets/output.json";
@@ -26,6 +32,10 @@ const constitutencies_with_names = {
     12: "dolnośląskie i opolskie",
     13: "lubuskie i zachodniopomorskie",
 };
+
+function getKeyByValue(object, value) {
+    return Object.keys(object).find((key) => object[key] === value);
+}
 
 function Candidate({
     name,
@@ -64,35 +74,73 @@ function Candidate({
 
 function Candidates() {
     const [searched, setSearched] = useState("");
+    let [okr, setOkr] = useState(1);
+
     const handleChange = (event) => setSearched(event.target.value);
 
     return (
         <div>
             <div id="search">
-                <InputGroup position="sticky">
-                    <Input
-                        className="searchbar"
-                        value={searched}
-                        onChange={handleChange}
-                        placeholder="Search"
-                        _placeholder={{
-                            opacity: 1,
-                            backgroundColor: "#F4F4F4",
-                        }}
-                        marginBottom="1"
-                    ></Input>
-                    <InputLeftElement>
-                        <FaSearch />
-                    </InputLeftElement>
-                </InputGroup>
+                <Flex gap="1">
+                    <InputGroup>
+                        <Input
+                            className="searchbar"
+                            value={searched}
+                            onChange={handleChange}
+                            placeholder="Search"
+                            _placeholder={{
+                                opacity: 1,
+                                backgroundColor: "#F4F4F4",
+                            }}
+                            marginBottom="1"
+                        ></Input>
+                        <InputLeftElement>
+                            <FaSearch />
+                        </InputLeftElement>
+                    </InputGroup>
+                    <Menu>
+                        <MenuButton as={Button}>Voting District</MenuButton>
+                        <MenuList>
+                            {Object.values(constitutencies_with_names).map(
+                                (okr) => (
+                                    <MenuItem
+                                        onClick={() => {
+                                            setOkr(
+                                                getKeyByValue(
+                                                    constitutencies_with_names,
+                                                    okr
+                                                )
+                                            );
+                                        }}
+                                    >
+                                        {okr} (
+                                        {getKeyByValue(
+                                            constitutencies_with_names,
+                                            okr
+                                        )}
+                                        )
+                                    </MenuItem>
+                                )
+                            )}
+                        </MenuList>
+                    </Menu>
+                </Flex>
+
+                <Text>
+                    Selected disctrict:{" "}
+                    <b>
+                        {constitutencies_with_names[okr]} ({okr})
+                    </b>
+                </Text>
+
                 <Flex
                     direction="column"
                     overflow="visible"
                     paddingBottom="24"
                     gap="2"
                 >
-                    {Object.keys(data).map((okr) =>
-                        data[okr].map((candidate) => {
+                    {data["constituency_nr_" + okr.toString()].map(
+                        (candidate) => {
                             const cand_name = candidate["surname_and_names"];
                             if (
                                 cand_name
@@ -115,7 +163,7 @@ function Candidates() {
                                     />
                                 );
                             }
-                        })
+                        }
                     )}
                 </Flex>
             </div>

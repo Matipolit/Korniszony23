@@ -19,7 +19,7 @@ function Home() {
                 boxShadow="0px 4px 4px 0px rgba(0, 0, 0, 0.25)"
             >
                 <Text fontSize="16px" color="#193769;">
-                    Elections to the European Parliament in <b>2137 days</b>
+                    Elections to the European Parliament in <b>123 days</b>
                 </Text>
                 <Box background="#FFFFFF" borderRadius="4" marginTop="2">
                     <Text fontSize="13px" padding="2">
