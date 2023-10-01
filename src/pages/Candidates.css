@@ -1,0 +1,13 @@
+#search {
+    overflow: auto;
+    height: calc(100% - 150px);
+    padding: 1rem;
+}
+
+.candidate {
+    padding: 8px;
+    border-radius: 15px;
+    border: 1px solid var(--v2-Secondary, #ebf2fe);
+    background: #fff;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
