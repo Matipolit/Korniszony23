@@ -4,20 +4,9 @@ import Login from "./Login";
 import Layout from "./Layout";
 
 function App() {
-    const [loggedIn, setLoggedIn] = useState(false);
-
     return (
         <Box height="calc(100vh)">
-            {!loggedIn ? (
-                <Login
-                    logIn={() => {
-                        setLoggedIn(true);
-                    }}
-                ></Login>
-            ) : (
-                <Layout />
-            )}
-            <Box></Box>
+            <Layout />
         </Box>
     );
 }
