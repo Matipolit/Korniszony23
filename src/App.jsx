@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Center, Text, Box } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import Login from "./Login";
 import Layout from "./Layout";
 

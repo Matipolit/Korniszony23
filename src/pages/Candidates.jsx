@@ -101,6 +101,10 @@ function Candidates() {
                             ) {
                                 return (
                                     <Candidate
+                                        key={
+                                            candidate["list_number"] * 1000 +
+                                            candidate["number_on_list"]
+                                        }
                                         name={cand_name}
                                         list_number={candidate["list_number"]}
                                         position={candidate["number_on_list"]}
