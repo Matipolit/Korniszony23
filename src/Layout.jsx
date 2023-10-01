@@ -14,6 +14,7 @@ import {
 import Home from "./pages/Home";
 import Latarnik from "./pages/Latarnik";
 import Candidates from "./pages/Candidates";
+import Vote from "./pages/Vote";
 
 const titles = ["Friends", "Profile", "Home", "Voting", "Meet the candidates"]
 
@@ -30,7 +31,7 @@ function Layout(){
   return(
     <Box>
       <Text fontSize="xx-large" fontWeight="bold">{title}</Text>
-      {index == 2 ? <Home /> : index == 4 ? <Candidates /> : <></>}
+      {index == 2 ? <Home /> : index == 3 ? <Vote /> : index == 4 ? <Candidates /> : <></>}
       <BottomNavigation
         value={index}
         onChange={(newIndex) => {
