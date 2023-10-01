@@ -1,6 +1,16 @@
 import { Box, Center, Text, Button, Flex} from "@chakra-ui/react"
+import { useState } from "react"
+import VoteChoice from "./VoteChoice"
+
+
+
 function Vote(){
-  return(
+
+const [voting, setVoting] = useState(0);
+
+  return(voting == 1 ? <VoteChoice/> :
+
+
     <Box padding="3">
     <Text fontSize="27px" color="#193769;" fontWeight="bold">
       Upcoming elections
@@ -10,7 +20,7 @@ function Vote(){
       <br></br>
       123 days
     </Text>
-    <Button backgroundColor="white" border="2px" borderColor="#193769;" margin="13px">
+    <Button backgroundColor="white" border="2px" borderColor="#193769;" margin="13px" onClick={() => setVoting(1)}>
       <Text fontSize="40px" color="yellow">•</Text>
       <Text fontSize="20px" color="#193769;">
       &nbsp;&nbsp;EU Parliament 2024 
